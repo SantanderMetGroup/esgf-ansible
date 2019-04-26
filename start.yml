@@ -1,5 +1,4 @@
 - hosts: all
-  connection: paramiko
   become: yes
   tasks:
     - name: Include the admin passwd role

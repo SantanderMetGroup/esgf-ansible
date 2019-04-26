@@ -1,3 +1,7 @@
+# Fork from SMG of ESGF-Ansible
+
+ansible-playbook -i ../inventories/1lxc install.yml -e "@vars" --tags data
+ansible-playbook -i ../inventories/1lxc start.yml -e "@vars" --tags data
 
 # ESGF-Ansible
 ## Documentation

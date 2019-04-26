@@ -1,10 +1,8 @@
-
 # All ESGF Node Componenets
 
-- hosts: all
+- hosts: lb
   # strategy: free
   become: yes
-  connection: paramiko
   any_errors_fatal: true
   tasks:
     # Get the admin password
@@ -13,7 +11,7 @@
         - include_role:
             name: passwd
       tags: always
-  
+
     - name: Verify variables
       block:
         - include_role:
