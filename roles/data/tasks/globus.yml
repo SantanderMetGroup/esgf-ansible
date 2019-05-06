@@ -127,6 +127,9 @@
 - name: Add a mapfile entry
   command: grid-mapfile-add-entry -dn '^.*$' -ln globus
 
+- name: Copy globus-gridftp-server-setup-chroot modified to work with lxc
+  copy: src=globus-gridftp-server-setup-chroot dest=/usr/sbin/globus-gridftp-server-setup-chroot
+
 - name: Create chroot jail for GridFTP
   command: globus-gridftp-server-setup-chroot -r {{ gridftp.chroot }}
 

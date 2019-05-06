@@ -1,5 +1,7 @@
 # Fork from SMG of ESGF-Ansible
 
+Create $devs from globus-gridftp-server-setup-chroot in the container (/var/lib/lxd)
+
 ```bash
 ansible-playbook -i ../inventories/1lxc install.yml -e "@vars" --tags data
 ansible-playbook -i ../inventories/1lxc start.yml -e "@vars" --tags data
