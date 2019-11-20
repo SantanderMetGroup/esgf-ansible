@@ -1,5 +1,5 @@
-- hosts: all
-  connection: paramiko
+- hosts: spock
+  # connection: paramiko
   become: yes
   tasks:
     - name: Include the admin passwd role

@@ -1,0 +1,13 @@
+[all]
+spock ansible_user=root ansible_host=lxcspock ansible_ssh_common_args='-o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+wn023 ansible_user=root ansible_host=lxcwn023 ansible_ssh_common_args='-o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+wn025 ansible_user=root ansible_host=lxcwn025 ansible_ssh_common_args='-o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+
+[data]
+spock
+
+[idp]
+arandom.idp.com
+
+[index]
+arandom.idp.com
