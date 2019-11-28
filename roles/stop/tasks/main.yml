@@ -6,7 +6,6 @@
     state: stopped
   tags:
     - httpd
-    - never
 
 - name: stop postgres
   service:
@@ -83,14 +82,14 @@
     - data
     - dashboard-ip
 
-- name: stop globus-gridftp-server
-  when: "'data' in group_names"
-  service:
-    name: globus-gridftp-server
-    state: stopped
-  tags:
-    - data
-    - gridftp
+      #- name: stop globus-gridftp-server
+      #  when: "'data' in group_names"
+      #  service:
+      #    name: globus-gridftp-server
+      #    state: stopped
+      #  tags:
+      #    - data
+      #    - gridftp
 
 - name: Unmount all bind mounts of data directories specified in esg.ini
   when: "'data' in group_names"

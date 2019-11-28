@@ -1,4 +1,4 @@
-- hosts: spock
+- hosts: lb
   #connection: paramiko
   become: yes
   tasks:

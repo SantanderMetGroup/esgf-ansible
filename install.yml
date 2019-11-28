@@ -1,7 +1,7 @@
 
 # All ESGF Node Componenets
 
-- hosts: spock
+- hosts: lb
   # strategy: free
   become: yes
   # connection: paramiko
