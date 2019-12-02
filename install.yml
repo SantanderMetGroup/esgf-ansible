@@ -51,6 +51,10 @@
       tags: data
       when: "'data' in group_names"
 
+    - name: Copy SMG threddsConfig.xml
+      copy: src=files/threddsConfig.xml dest=/esg/content/thredds/threddsConfig.xml
+      tags: asdf
+
     - name: Publisher
       block:
         - include_role:
