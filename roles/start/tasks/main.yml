@@ -120,11 +120,12 @@
     - data
     - dashboard-ip
 
-    #- name: start globus-gridftp-server
-    #  when: "'data' in group_names"
-    #  service:
-    #    name: globus-gridftp-server
-    #    state: started
-    #  tags:
-    #    - data
-    #    - gridftp
+- name: start globus-gridftp-server
+  ignore_errors: True
+  when: "'data' in group_names"
+  service:
+    name: globus-gridftp-server
+    state: started
+  tags:
+    - data
+    - gridftp

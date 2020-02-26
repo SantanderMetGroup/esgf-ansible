@@ -6,8 +6,6 @@
   become: yes
   # connection: paramiko
   any_errors_fatal: true
-  vars_files:
-    - secrets.yml
   tasks:
     # Get the admin password
     - name: Include the admin passwd role
@@ -50,6 +48,14 @@
             name: data
       tags: data
       when: "'data' in group_names"
+
+    - name: Disable URL cookies for tomcat
+      blockinfile:
+        path: /usr/local/tomcat/webapps/esg-orp/WEB-INF/web.xml
+        block: |
+          <session-config>
+              <tracking-mode>COOKIE</tracking-mode>
+          </session-config>
 
     - name: Copy SMG threddsConfig.xml
       copy: src=files/threddsConfig.xml dest=/esg/content/thredds/threddsConfig.xml
