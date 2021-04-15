@@ -4,8 +4,8 @@
     path: "{{ esg.config.dir }}/tomcat"
     state: directory
 
-- name: Include certificate tasks
-  include_tasks: certs.yml
+#- name: Include certificate tasks
+#  include_tasks: certs.yml
 
 # Install Tomcat configuration files
 - name: Install server.xml
